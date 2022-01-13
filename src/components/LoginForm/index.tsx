@@ -9,18 +9,17 @@ interface LoginFormProps {
   password: string;
 }
 
-const FormLogin: React.FC = () => {
+const LoginForm: React.FC = () => {
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors, isValid },
-  } = useForm<LoginFormProps>({mode:"onChange"});
+  } = useForm<LoginFormProps>({ mode: 'onChange' });
 
   async function onSubmit(data: LoginFormProps) {
     console.log(data);
   }
-
 
   return (
     <div className={styles.container}>
@@ -49,7 +48,6 @@ const FormLogin: React.FC = () => {
                   type="password"
                   placeholder="Digite sua senha"
                   className={styles.placeInput}
-
                 />
                 {errors.password && <span>{errors.password?.message}</span>}
               </div>
@@ -57,11 +55,16 @@ const FormLogin: React.FC = () => {
             <div>
               <div>
                 <div className={styles.forgotPassword}>
-                    <h3>Esqueceu sua senha?</h3>
+                  <h3>Esqueceu sua senha?</h3>
                 </div>
               </div>
               <div>
-                <Button className="btn" title="Entrar" type="submit" disabled={ (watch("email")?.length >= 1 || watch("password")?.length >= 1) && !isValid} />
+                <Button
+                  className="btn"
+                  title="Entrar"
+                  type="submit"
+                  disabled={(watch('email')?.length >= 1 || watch('password')?.length >= 1) && !isValid}
+                />
               </div>
             </div>
           </form>
@@ -72,4 +75,4 @@ const FormLogin: React.FC = () => {
   );
 };
 
-export default FormLogin;
+export default LoginForm;
