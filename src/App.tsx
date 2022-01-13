@@ -1,12 +1,11 @@
-import React from 'react';
-import './App.css';
+import './styles/global.scss'
 
-function App() {
-  return (
-    <div className="App">
-        <h1>Credisan</h1>
-    </div>
-  );
+import LoginForm from './components/LoginForm'
+
+export default function App() {
+return (
+  <div className="App">
+    <LoginForm />
+  </div>
+);
 }
-
-export default App;
