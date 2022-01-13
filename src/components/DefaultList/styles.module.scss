@@ -1,0 +1,103 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: transparent;
+  gap: 16px;
+
+  .defaultList {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    &.emptyList {
+      height: 100%; // apenas com lista vazia
+    }
+
+    border-radius: 12px;
+    box-shadow: 0px 0px 5px rgba(32, 35, 48, 0.06);
+
+    .filter {
+      display: flex;
+      gap: 16px;
+    }
+
+    .table {
+      text-align: left;
+      border-collapse: collapse;
+
+      thead {
+        background: var(--bg-light);
+        height: 40px;
+        color: var(--gray-dark);
+        font-size: 12px;
+        line-height: 16px;
+        font-weight: 600;
+
+        tr {
+          border-top: 1px solid var(--white-dark);
+          border-bottom: 1px solid var(--white-dark);
+
+          th:first-of-type {
+            padding-left: 24px;
+          }
+        }
+      }
+
+      tbody {
+        tr {
+          position: relative;
+          height: 72px;
+          color: var(--green-dark);
+          font-size: 14px;
+          line-height: 20px;
+
+          td:first-of-type {
+            padding-left: 24px;
+          }
+
+          &:not(:last-of-type) {
+            &::after {
+              content: "";
+              width: calc(100% - 48px);
+              height: 1px;
+              position: absolute;
+              transform: translate(calc(-100% - 24px), 72px);
+              background: var(--white-dark);
+            }
+          }
+        }
+      }
+    }
+
+    .emptyListMessage {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      gap: 24px;
+
+      div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+
+        h1 {
+          font-size: 20px;
+          line-height: 24px;
+          font-weight: 600;
+        }
+
+        h2 {
+          text-align: center;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 20px;
+          color: var(--gray-dark);
+        }
+      }
+    }
+  }
+}

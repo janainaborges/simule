@@ -1,0 +1,44 @@
+.searchBox {
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  height: 40px;
+  gap: 7px;
+
+  background: var(--bg-light);
+
+  border: 1px solid var(--white-dark);
+  border-radius: 8px;
+
+  input {
+    border: none;
+    font-size: 14px;
+    line-height: 20px;
+    background: transparent;
+    border: none;
+    border-style: none;
+    outline: none;
+
+    font-size: 14px;
+    line-height: 20px;
+
+    &:focus {
+      &::placeholder {
+        visibility: hidden;
+      }
+    }
+
+    &::placeholder {
+      color: var(--gray-dark);
+    }
+  }
+
+  .cancelButton {
+    visibility: hidden;
+    cursor: pointer;
+
+    &.visible {
+      visibility: visible;
+    }
+  }
+}

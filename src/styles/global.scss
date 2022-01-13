@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --gray-light: #94a3b8;
+  --gray-medium: #8e9db3;
+  --gray-dark: #637692;
+
+  --green-light: #16a34a;
+  --green-medium: #1e4b29;
+  --green-dark: #1e293b;
+
+  --white-light: #fff;
+  --white-medium: #f5f6f9;
+  --white-dark: #e2e8f0;
+  --white-darkest: #edeff2;
+
+  --bg-light: #f9fafc;
+
+  --blue-medium: #9db5ff;
+
+  --red-medium: #d14343;
+}
+
+html,
+body {
+  font: 16px "Inter", sans-serif;
+  color: #0f172a;
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+}

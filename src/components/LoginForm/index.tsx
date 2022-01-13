@@ -1,42 +1,75 @@
-import React from 'react'
+import React from 'react';
+import styles from './styles.module.scss';
+import Button from '../Button';
 
-function LoginForm() {
+import { useForm } from 'react-hook-form';
+
+interface LoginFormProps {
+  email: string;
+  password: string;
+}
+
+const FormLogin: React.FC = () => {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors, isValid },
+  } = useForm<LoginFormProps>({mode:"onChange"});
+
+  async function onSubmit(data: LoginFormProps) {
+    console.log(data);
+  }
 
 
   return (
-    <div>
-      <div className="min-h-screen bg-gray-50 flex flex-col justify-center">
-        <div className="max-w-md w-full mx-auto">
-          <div className="text-center font-medium text-xl">Something</div>
-          <div className="text-3xl font-bold text-gray-900 mt-2 text-center">another</div>
-          <div className="max-w-md w-full mx-auto mt-4 bg-white p-8 border border-gray-300">
-            <form action="space-y-6" className=""></form>
-            <div>
-              <label htmlFor="" className="text-sm text-left font-bold text-gray-600 block">
-                E-mail
-              </label>
-              <input type="text" className="w-full p-2 border border-gray-300 rounded mt-1" />
-
+    <div className={styles.container}>
+      <section className={styles.box} id="login">
+        <div className={styles.containerLogin}>
+          <h1 className={styles.containerTitle}>Acessar conta</h1>
+          <form action="" onSubmit={handleSubmit(onSubmit)}>
+            <div className={styles.inputForm}>
               <div>
-                <label htmlFor="" className="text-sm text-left font-bold text-gray-600 block mt-4 ">
-                  Senha
+                <label>
+                  <h3 className={styles.labelForm}>Nome do usuário</h3>
                 </label>
                 <input
-                  type="text"
-                  className="w-full  p-2 border border-gray-300 rounded mt-1 cursor-cell hover:border-rose-600 text-sm"
+                  {...register('email', { required: 'Campo obrigatório' })}
+                  placeholder="Digite seu usuário"
+                  className={styles.placeInput}
+                  type="email"
                 />
+                {errors.email && <span>{errors.email?.message}</span>}
+
+                <label htmlFor="password">
+                  <h3 className={styles.labelForm}>Senha</h3>
+                </label>
+                <input
+                  {...register('password', { required: 'Campo obrigatório' })}
+                  type="password"
+                  placeholder="Digite sua senha"
+                  className={styles.placeInput}
+
+                />
+                {errors.password && <span>{errors.password?.message}</span>}
               </div>
-              <button className="bg-blue-900 p-3 mt-3 rounded-[18px] hover:bg-sky-500 active:bg-indigo-50 focus:outline-none  focus:bg-indigo-100 text-md text-neutral-100">
-                Salvar
-              </button>
             </div>
-          </div>
+            <div>
+              <div>
+                <div className={styles.forgotPassword}>
+                    <h3>Esqueceu sua senha?</h3>
+                </div>
+              </div>
+              <div>
+                <Button className="btn" title="Entrar" type="submit" disabled={ (watch("email")?.length >= 1 || watch("password")?.length >= 1) && !isValid} />
+              </div>
+            </div>
+          </form>
         </div>
-        <img src="img/login.svg" alt="login" />
-      </div>
+      </section>
+      <div className={styles.loginImage}></div>
     </div>
   );
-}
+};
 
-export default LoginForm;
-
+export default FormLogin;

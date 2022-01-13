@@ -1,5 +1,0 @@
--> npx npm-check -u
-
--> npm run dev
-
--> npm run storybook

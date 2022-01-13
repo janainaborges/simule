@@ -1,11 +1,11 @@
-import './styles/global.scss'
+import LoginForm from './components/LoginForm';
 
-import LoginForm from './components/LoginForm'
+import styles from './styles/global.scss';
 
 export default function App() {
-return (
-  <div className="App">
-    <LoginForm />
-  </div>
-);
+  return (
+    <div className={styles.container}>
+      <LoginForm />
+    </div>
+  );
 }

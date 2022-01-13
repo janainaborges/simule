@@ -1,0 +1,269 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.container {
+  margin: auto;
+  padding: 0;
+  display: flexbox;
+  justify-content: center;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  padding-left: 15rem;
+}
+
+//Input
+.placeInput {
+  width: 384px;
+  height: 56px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 28px 16px;
+  position: static;
+  top: 24px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-sizing: border-box;
+  border-radius: 8px;
+  flex: none;
+  align-self: stretch;
+  flex-grow: 0;
+  margin: 10px 0px;
+}
+
+.placeInput:focus {
+  outline: none !important;
+  background: #ffffff;
+  border: 1px solid #d14343;
+}
+.placeInput:hover {
+  background: #ffffff;
+  border: 2px solid #9db5ff;
+}
+.placeInput:disabled {
+  background: #f9fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.placeInput::placeholder {
+  color: #8e9db3;
+  font-size: 14px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+}
+
+span {
+  color: #d14343;
+  font-size: 10px;
+}
+
+// Acessar Conta
+.containerTitle {
+  font-size: 45px;
+  position: static;
+  line-height: 40px;
+  align-items: center;
+  margin: 8px 0px;
+  margin-bottom: 60px;
+}
+
+// Label
+.labelForm {
+  margin-top: 30px;
+  letter-spacing: 0.25px;
+  line-height: 16px;
+  font-size: 14px;
+}
+
+// imagem
+
+.loginImage {
+  width: 55%;
+  background-image: url('../../assets/img/login.png');
+  background-position: top;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+
+// Esqueceu sua senha
+.forgotPassword {
+  top: 5px;
+  position: relative;
+  line-height: 16px;
+  display: flex;
+  letter-spacing: 0.25px;
+  justify-content: end;
+  font-size: 11px;
+}
+
+button,
+.forgotPassword,
+.placeInput,
+.containerTitle {
+  width: 400px;
+  height: 50px;
+}
+
+@media screen and (max-width: 1600px) {
+
+  .placeInput {
+  padding: 20px 16px;
+}
+
+  .box {
+    display: flex;
+    align-items: center;
+    padding-left: 90px;
+  }
+
+  .placeInput::placeholder {
+  color: #8e9db3;
+  font-size: 14px;
+}
+
+  .containerTitle {
+    font-size: 32px;
+    margin-bottom: 15px;
+  }
+  .labelForm {
+    font-size: 12px;
+  }
+  .forgotPassword {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  button,
+  .forgotPassword,
+  .placeInput,
+  .containerTitle {
+    width: 300px;
+    height: 40px;
+  }
+
+  .containerTitle {
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+  .labelForm {
+    font-size: 12px;
+  }
+  .forgotPassword {
+    font-size: 11px;
+  }
+  button {
+    margin: 20px 0px;
+  }
+}
+
+@media screen and (max-width: 960px) {
+
+   .loginImage {
+    width: 60%;
+  }
+  .box {
+    padding-left: 5%;
+    padding-right: 5%;
+
+
+  }
+
+  button,
+  .forgotPassword,
+  .placeInput,
+  .containerTitle,
+  .containerTitle {
+    width: 300px;
+    height: 40px;
+  }
+
+  .containerTitle {
+    font-size: 25px;
+    margin-bottom: 10px;
+  }
+  .labelForm {
+    font-size: 14px;
+  }
+  .forgotPassword {
+    font-size: 12px;
+  }
+
+  button {
+    margin: 10px 0px;
+  }
+}
+@media screen and (max-width: 720px) {
+
+  .loginImage {
+    width: 0rem;
+    height: 0rem;
+  }
+
+  .box {
+    padding-left: 25%;
+    padding-top: 20%;
+  }
+  button,
+  .forgotPassword,
+  .placeInput,
+  .containerTitle,
+  .containerTitle {
+    width: 300px;
+    height: 40px;
+  }
+  .containerTitle {
+    font-size: 25px;
+    margin-bottom: 8px;
+  }
+  .labelForm {
+    font-size: 11px;
+  }
+  .forgotPassword {
+    font-size: 10px;
+  }
+
+  button {
+    margin: 8px 0px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .box {
+    padding-left: 20%;
+    padding-top: 30%;
+  }
+  button,
+  .forgotPassword,
+  .placeInput,
+  .containerTitle,
+  .containerTitle {
+    width: 300px;
+    height: 40px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .box {
+    padding-left: 5%;
+    padding-top: 30%;
+  }
+  button,
+  .forgotPassword,
+  .placeInput,
+  .containerTitle,
+  .containerTitle {
+    width: 250px;
+    height: 30px;
+  }
+}

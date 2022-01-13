@@ -1,0 +1,134 @@
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  line-height: 24px;
+  height: 32px;
+
+  .view {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    strong {
+      color: var(--gray-dark);
+    }
+
+    div {
+      display: flex;
+      align-items: center;
+    }
+
+    .lightColor {
+      color: var(--gray-light);
+    }
+
+    .dropdownPagination {
+      position: relative;
+      display: flex;
+      align-items: center;
+
+      .openDropDown {
+        cursor: pointer;
+      }
+
+      strong {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .options {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        transform: translate(-3px, 37%);
+        background: var(--white-light);
+        box-shadow: 0px 0px 5px rgba(32, 35, 48, 0.1);
+        padding: 0 3px;
+        visibility: hidden;
+        opacity: 0;
+
+        transition: 0.3s;
+
+        .option {
+          display: flex;
+          justify-content: center;
+          background: var(--white-medium);
+          width: 100%;
+          border-radius: 4px;
+
+          &.notSelected {
+            background: var(--white-light);
+            cursor: pointer;
+
+            strong {
+              color: var(--gray-light);
+            }
+          }
+        }
+
+        .currentOption {
+          cursor: pointer;
+
+          img {
+            transform: rotate(180deg);
+          }
+        }
+
+        &.isOpen {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .pageSelector {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    button {
+      font-size: 24px;
+      color: var(--gray-medium);
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      background: var(--white-light);
+      border: none;
+      box-shadow: 0px 0px 5px rgba(32, 35, 48, 0.1);
+      cursor: pointer;
+
+      &:disabled {
+        cursor: default;
+      }
+    }
+
+    .setPage {
+      display: flex;
+      font-size: 14px;
+      line-height: 17;
+      font-weight: 500;
+      color: var(--gray-light);
+      background: transparent;
+
+      cursor: pointer;
+
+      div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+
+        &.currentPage {
+          background: var(--green-medium);
+          color: var(--white-light);
+          border-radius: 8px;
+          cursor: default;
+        }
+      }
+    }
+  }
+}

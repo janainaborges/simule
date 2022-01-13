@@ -1,0 +1,57 @@
+.buttonOutline {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 18px;
+  color: var(--gray-dark);
+  background: var(--white-light);
+  border: none;
+
+  outline: 1px solid var(--white-dark);
+  border-radius: 8px;
+
+  height: 40px;
+
+  img {
+    width: 13px;
+  }
+
+  p {
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 500;
+    color: var(--gray-dark);
+  }
+
+  .amount {
+    width: 16px;
+    height: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+    background: var(--white-medium);
+  }
+
+  &:active {
+    background: var(--bg-light);
+  }
+
+  &:focus {
+    outline: 2px solid var(--blue-medium);
+
+    p {
+      color: var(--gray-dark);
+    }
+  }
+
+  &:disabled {
+    outline: 1px solid var(--white-darkest);
+
+    p {
+      color: var(--gray-light);
+    }
+  }
+}
